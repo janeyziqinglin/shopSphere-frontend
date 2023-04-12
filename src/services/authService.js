@@ -50,7 +50,7 @@ export const loginUser = async (userData) => {
   }
 };
 
-// Logout User
+// Logout User-get instead of post
 export const logoutUser = async () => {
   try {
     await axios.get(`${BACKEND_URL}/api/users/logout`);
