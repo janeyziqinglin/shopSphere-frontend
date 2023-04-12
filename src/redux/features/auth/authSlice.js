@@ -14,6 +14,8 @@ const initialState = {
   userID: "",
 };
 
+// a slice represents a portion of the overall state tree of an application. 
+//The initialState object defines the initial state of the authSlice. 
 const authSlice = createSlice({
   name: "auth",
   initialState,
