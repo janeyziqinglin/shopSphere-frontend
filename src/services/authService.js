@@ -89,6 +89,7 @@ export const resetPassword = async (userData, resetToken) => {
     );
     return response.data;
   } catch (error) {
+    //response.data.message points to the "Reset email send" in backend
     const message =
       (error.response && error.response.data && error.response.data.message) ||
       error.message ||
