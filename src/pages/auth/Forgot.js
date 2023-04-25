@@ -17,7 +17,7 @@ const Forgot = () => {
     }
 
     if (!validateEmail(email)) {
-      return toast.error("Please enter a valid email.");
+      return toast.error("The email you entered is invalid. Please enter a valid email.");
     }
 
     const userData = {
