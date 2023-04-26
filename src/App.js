@@ -14,15 +14,21 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getLoginStatus } from "./services/authService";
 import { SET_LOGIN } from "./redux/features/auth/authSlice";
+// import AddProduct from "./pages/addProduct/AddProduct";
+// import ProductDetail from "./components/product/productDetail/ProductDetail";
+// import EditProduct from "./pages/editProduct/EditProduct";
+// import Profile from "./pages/profile/Profile";
+// import EditProfile from "./pages/profile/EditProfile";
+// import Contact from "./pages/contact/Contact";
 
 axios.defaults.withCredentials = true;
 
 function App() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     async function loginStatus() {
       const status = await getLoginStatus();
+      console.log(`User login status: ${status}`);
       dispatch(SET_LOGIN(status));
     }
     loginStatus();

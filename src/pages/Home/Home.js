@@ -14,13 +14,13 @@ const Home = () => {
         <div className="logo">
           <RiProductHuntLine size={35} />
         </div>
+
         <ul className="home-links">
           <ShowOnLogout>
           <li>
             <Link to="/register">Register</Link>
           </li>
           </ShowOnLogout>
-          
           <ShowOnLogout>
           <li>
             <button className="--btn --btn-primary">

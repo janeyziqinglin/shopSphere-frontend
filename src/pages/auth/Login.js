@@ -9,7 +9,6 @@ import { loginUser, validateEmail } from "../../services/authService";
 import { SET_LOGIN, SET_NAME } from "../../redux/features/auth/authSlice";
 import Loader from "../../components/loader/Loader";
 
-//similar to register.js, but only contain email and password, no (name, password2)
 const initialState = {
   email: "",
   password: "",
@@ -45,6 +44,7 @@ const Login = () => {
     setIsLoading(true);
     try {
       const data = await loginUser(userData);
+      // console.log(data.token);
       console.log(data);
       await dispatch(SET_LOGIN(true));
       await dispatch(SET_NAME(data.name));

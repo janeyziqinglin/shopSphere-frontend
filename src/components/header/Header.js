@@ -13,6 +13,7 @@ const Header = () => {
     await dispatch(SET_LOGIN(false));
     navigate("/login");
   };
+  
   return (
     <div className="--pad header">
       <div className="--flex-between">
