@@ -15,7 +15,7 @@ export const registerUser = async (userData) => {
     const response = await axios.post(
       `${BACKEND_URL}/api/users/register`,
       userData,
-      { withCredentials: true } //This allows the server to identify the user and provide a personalized response.
+      { withCredentials: true }
     );
     if (response.statusText === "OK") {
       toast.success("User Registered successfully");
@@ -50,7 +50,7 @@ export const loginUser = async (userData) => {
   }
 };
 
-// Logout User-get instead of post
+// Logout User
 export const logoutUser = async () => {
   try {
     await axios.get(`${BACKEND_URL}/api/users/logout`);
@@ -89,7 +89,6 @@ export const resetPassword = async (userData, resetToken) => {
     );
     return response.data;
   } catch (error) {
-    //response.data.message points to the "Reset email send" in backend
     const message =
       (error.response && error.response.data && error.response.data.message) ||
       error.message ||
@@ -98,11 +97,15 @@ export const resetPassword = async (userData, resetToken) => {
   }
 };
 
+
 // Get Login Status
 export const getLoginStatus = async () => {
   try {
     const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`);
-    return response.data;
+    const status = response.data;
+    console.log(`get login status: ${status}`);
+    return status;
+    
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||
@@ -111,6 +114,8 @@ export const getLoginStatus = async () => {
     toast.error(message);
   }
 };
+
+
 // Get User Profile
 export const getUser = async () => {
   try {
