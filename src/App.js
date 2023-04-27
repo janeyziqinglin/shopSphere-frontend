@@ -14,21 +14,21 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getLoginStatus } from "./services/authService";
 import { SET_LOGIN } from "./redux/features/auth/authSlice";
-// import AddProduct from "./pages/addProduct/AddProduct";
-// import ProductDetail from "./components/product/productDetail/ProductDetail";
-// import EditProduct from "./pages/editProduct/EditProduct";
-// import Profile from "./pages/profile/Profile";
-// import EditProfile from "./pages/profile/EditProfile";
-// import Contact from "./pages/contact/Contact";
+import AddProduct from "./pages/addProduct/AddProduct";
+import ProductDetail from "./components/product/productDetail/ProductDetail";
+import EditProduct from "./pages/editProduct/EditProduct";
+import Profile from "./pages/profile/Profile";
+import EditProfile from "./pages/profile/EditProfile";
+import Contact from "./pages/contact/Contact";
 
 axios.defaults.withCredentials = true;
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     async function loginStatus() {
       const status = await getLoginStatus();
-      console.log(`User login status: ${status}`);
       dispatch(SET_LOGIN(status));
     }
     loginStatus();
@@ -50,6 +50,66 @@ function App() {
             <Sidebar>
               <Layout>
                 <Dashboard />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/add-product"
+          element={
+            <Sidebar>
+              <Layout>
+                <AddProduct />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/product-detail/:id"
+          element={
+            <Sidebar>
+              <Layout>
+                <ProductDetail />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/edit-product/:id"
+          element={
+            <Sidebar>
+              <Layout>
+                <EditProduct />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <Sidebar>
+              <Layout>
+                <Profile />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/edit-profile"
+          element={
+            <Sidebar>
+              <Layout>
+                <EditProfile />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/contact-us"
+          element={
+            <Sidebar>
+              <Layout>
+                <Contact />
               </Layout>
             </Sidebar>
           }
