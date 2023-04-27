@@ -17,12 +17,12 @@ const menu = [
     icon: <FaRegChartBar />,
     childrens: [
       {
-        title: "Profile", //can add icon for chilren as well
+        title: "Profile",
         path: "/profile",
       },
       {
         title: "Edit Profile",
-        path: "/profile-update",
+        path: "/edit-profile",
       },
     ],
   },
