@@ -41,7 +41,7 @@ const ProductForm = ({
           <label>Product Name:</label>
           <input
             type="text"
-            placeholder="Product name"
+            placeholder="Product Name"
             name="name"
             value={product?.name}
             onChange={handleInputChange}
