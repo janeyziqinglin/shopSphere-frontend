@@ -5,6 +5,7 @@ import { changePassword } from "../../services/authService";
 import Card from "../card/Card";
 import { useNavigate } from "react-router-dom";
 
+//setup initialstate
 const initialState = {
   oldPassword: "",
   password: "",
