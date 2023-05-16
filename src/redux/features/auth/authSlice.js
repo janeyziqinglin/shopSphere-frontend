@@ -1,4 +1,5 @@
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
 const name = JSON.parse(localStorage.getItem("name"));
 
 const initialState = {
@@ -11,18 +12,13 @@ const initialState = {
     bio: "",
     photo: "",
   },
-  userID: "",
 };
-
-// a slice represents a portion of the overall state tree of an application. 
-//The initialState object defines the initial state of the authSlice. 
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
     SET_LOGIN(state, action) {
-      console.log("SET_LOGIN reducer called with payload:", action.payload);
       state.isLoggedIn = action.payload;
     },
     SET_NAME(state, action) {

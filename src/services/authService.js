@@ -97,15 +97,11 @@ export const resetPassword = async (userData, resetToken) => {
   }
 };
 
-
 // Get Login Status
 export const getLoginStatus = async () => {
   try {
     const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`);
-    const status = response.data;
-    console.log(`get login status: ${status}`);
-    return status;
-    
+    return response.data;
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||
@@ -114,8 +110,6 @@ export const getLoginStatus = async () => {
     toast.error(message);
   }
 };
-
-
 // Get User Profile
 export const getUser = async () => {
   try {
