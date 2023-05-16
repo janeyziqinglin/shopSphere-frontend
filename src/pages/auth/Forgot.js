@@ -11,19 +11,18 @@ const Forgot = () => {
 
   const forgot = async (e) => {
     e.preventDefault();
-    //validation 
     if (!email) {
-      return toast.error("Please enter an email.");
+      return toast.error("Please enter an email");
     }
 
     if (!validateEmail(email)) {
-      return toast.error("Please enter a valid email.");
+      return toast.error("Please enter a valid email");
     }
 
     const userData = {
       email,
     };
-    //no need try catch block here
+
     await forgotPassword(userData);
     setEmail("");
   };

@@ -30,7 +30,7 @@ const Register = () => {
 
   const register = async (e) => {
     e.preventDefault();
-    console.log(formData)
+
     if (!name || !email || !password) {
       return toast.error("All fields are required");
     }
@@ -64,7 +64,7 @@ const Register = () => {
 
   return (
     <div className={`container ${styles.auth}`}>
-      {isLoading && <Loader/>}
+      {isLoading && <Loader />}
       <Card>
         <div className={styles.form}>
           <div className="--flex-center">
@@ -120,6 +120,5 @@ const Register = () => {
     </div>
   );
 };
-
 
 export default Register;
