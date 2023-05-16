@@ -50,7 +50,7 @@ const AddProduct = () => {
     formData.append("name", name);
     formData.append("sku", generateKSKU(category));
     formData.append("category", category);
-    formData.append("quantity", quantity);
+    formData.append("quantity", Number(quantity));
     formData.append("price", price);
     formData.append("description", description);
     formData.append("image", productImage);

@@ -5,8 +5,6 @@ import "./Home.scss";
 import heroImg from "../../assets/inv-img.png";
 import { ShowOnLogin, ShowOnLogout } from "../../components/protect/HiddenLink";
 
-//display register, login while logout
-//display dashboard while login
 const Home = () => {
   return (
     <div className="home">
@@ -17,24 +15,23 @@ const Home = () => {
 
         <ul className="home-links">
           <ShowOnLogout>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
           </ShowOnLogout>
           <ShowOnLogout>
-          <li>
-            <button className="--btn --btn-primary">
-              <Link to="/login">Login</Link>
-            </button>
-          </li>
+            <li>
+              <button className="--btn --btn-primary">
+                <Link to="/login">Login</Link>
+              </button>
+            </li>
           </ShowOnLogout>
-
           <ShowOnLogin>
-          <li>
-            <button className="--btn --btn-primary">
-              <Link to="/dashboard">Dashboard</Link>
-            </button>
-          </li>
+            <li>
+              <button className="--btn --btn-primary">
+                <Link to="/dashboard">Dashboard</Link>
+              </button>
+            </li>
           </ShowOnLogin>
         </ul>
       </nav>
@@ -53,7 +50,7 @@ const Home = () => {
           </div>
           <div className="--flex-start">
             <NumberText num="14K" text="Brand Owners" />
-            <NumberText num="78K" text="Active Users" />
+            <NumberText num="23K" text="Active Users" />
             <NumberText num="500+" text="Partners" />
           </div>
         </div>
@@ -67,12 +64,12 @@ const Home = () => {
 };
 
 const NumberText = ({ num, text }) => {
-    return (
-      <div className="--ml">
-        <h3 className="--color-white">{num}</h3>
-        <p className="--color-white">{text}</p>
-      </div>
-    );
-  };
+  return (
+    <div className="--mr">
+      <h3 className="--color-white">{num}</h3>
+      <p className="--color-white">{text}</p>
+    </div>
+  );
+};
 
 export default Home;
